@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head title="Alter youth || Towards a literate Bangladesh" />
       <body className="antialiased">
         <Main />
         <NextScript />

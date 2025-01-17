@@ -3,19 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  --brand-color: #008a35;
+  --brand-link-color: #004e92;
+  --border-light: #d8e0ed;
+  --border: #b7b7b7;
+  --font-montserrat: "Gilroy,Helvetica,Indie Flower" !important;
 }
