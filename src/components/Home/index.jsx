@@ -2,6 +2,7 @@
 import Header from "../Header";
 import ScholarshipFeatures from "./ScholarshipFeatures";
 import ScholarshipCommunity from "./ScholarshipCommunity";
+import CommunityImpact from "./CommunityImpact";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Header />
       <ScholarshipFeatures />
       <ScholarshipCommunity />
+      <CommunityImpact />
     </div>
   );
 };

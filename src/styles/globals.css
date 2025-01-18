@@ -9,3 +9,21 @@
   --border: #b7b7b7;
   --font-montserrat: "Gilroy,Helvetica,Indie Flower" !important;
 }
+
+.swiper-button-next {
+  padding: 30px;
+  background-color: #ffff;
+  border-radius: 50%;
+  color: #000000cc !important;
+  width: 11px !important;
+  height: 15px !important;
+  font-size: 10px !important;
+}
+.swiper-button-prev {
+  padding: 30px;
+  background-color: #ffff;
+  border-radius: 50%;
+  color: #000000d2 !important;
+  width: 11px !important;
+  height: 15px !important;
+}
