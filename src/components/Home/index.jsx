@@ -5,6 +5,7 @@ import ScholarshipCommunity from "./ScholarshipCommunity";
 import CommunityImpact from "./CommunityImpact";
 import ScholarshipPage from "./Scholarship";
 import ScholarshipVideoSection from "./ScholarshipVideoSection";
+import Partners from "./Partners";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <CommunityImpact />
       <ScholarshipPage />
       <ScholarshipVideoSection />
+      <Partners />
       <Footer />
     </div>
   );

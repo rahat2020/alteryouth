@@ -6,15 +6,15 @@ import { AustraliaFlags, UkFlags, UsaFlags } from "@/utils/ui/customSvg/Flags";
 const getCountryFlags = (params) => {
   if (params?.country === "USA") {
     console.log("prams", params);
-    return <UsaFlags />;
+    return "/assets/usa.png";
   }
   if (params?.country === "UK") {
-    return <UkFlags />;
+    return "/assets/uk.png";
   }
   if (params?.country === "Australia") {
-    return <AustraliaFlags />;
+    return "/assets/australia.png";
   }
-  return <UsaFlags />;
+  return "/assets/usa.png";
 };
 const ScholarshipCommunity = () => {
   return (
@@ -46,9 +46,16 @@ const ScholarshipCommunity = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex flex-col items-center gap-2">
-                    <div className="flex bg-green w-full">
-                      @<span className="font-medium">{student?.username}</span>
-                      {getCountryFlags(student)}
+                    <div className="flex justify-center items-center w-full gap-1">
+                      @<p className="font-medium">{student?.username}</p>
+                      <Image
+                        src={getCountryFlags(student)}
+                        alt={student?.name}
+                        width={20}
+                        height={20}
+                        loading="lazy"
+                        className="object-cover w-3 h-3"
+                      />
                     </div>
                     <p className="text-10 text-green-600 bg-green-50 font-medium rounded-full p-1">
                       <span>{student.scholarships}</span>{" "}
