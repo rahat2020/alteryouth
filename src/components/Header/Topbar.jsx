@@ -1,15 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LogoIcon } from "@/utils/ui/customSvg/LogoIcon";
 import { Menu } from "react-feather";
+import { navData } from "@/helpers/data/navData";
 
 const Topbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [color, setColor] = useState(false);
+
+  useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 70) {
+        setColor(true);
+      } else {
+        setColor(false);
+      }
+    };
+    // changeColor()
+    window.addEventListener("scroll", changeColor);
+  }, []);
 
   return (
-    <nav className="fixed w-full z-50 bg-transparent">
+    <nav
+      className={`fixed w-full z-50 ${
+        color ? "bg-white shadow-md" : " bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-2">
@@ -33,45 +51,27 @@ const Topbar = () => {
             </button>
             <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg cursor-pointer flex items-center justify-center">
-                <Menu className="text-white" />
+                <Menu className={`${color ? "text-brand" : "text-white"}`} />
               </div>
               <span className="text-white text-xl font-semibold">
-                <LogoIcon />
+                <LogoIcon bgColor={color ? "#1DC468" : "white"} />
               </span>
             </Link>
           </div>
-
-          <div className="hidden lg:flex items-center gap-8 text-18 font-medium">
-            <Link
-              href="/about"
-              className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-            >
-              About
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-            >
-              How it works
-            </Link>
-            <Link
-              href="/scholarships"
-              className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-            >
-              Scholarships
-            </Link>
-            <Link
-              href="/collaborate"
-              className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-            >
-              Collaborate
-            </Link>
-            <Link
-              href="/login"
-              className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-            >
-              Login
-            </Link>
+          {/* web */}
+          <div className="hidden lg:flex items-center gap-8 text-18 font-medium relative">
+            {navData?.map((item) => (
+              <Link
+                href={item?.link}
+                key={item?.id}
+                id="Navbar_animatedUnderline__pGbA3"
+                className={`relative ${
+                  color ? "text-brand" : "text-white"
+                } text-15`}
+              >
+                {item?.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -81,36 +81,17 @@ const Topbar = () => {
         <div className="lg:hidden bg-black/90 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col gap-4">
-              <Link
-                href="/about"
-                className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-              >
-                About
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-              >
-                How it works
-              </Link>
-              <Link
-                href="/scholarships"
-                className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-              >
-                Scholarships
-              </Link>
-              <Link
-                href="/collaborate"
-                className="text-white transition-colors hover:border-b-4 hover:border-b-green"
-              >
-                Collaborate
-              </Link>
-              <Link
-                href="/login"
-                className="text-white hover:text-gray-200 transition-colors hover:border-b-green"
-              >
-                Login
-              </Link>
+              {navData?.map((item) => (
+                <Link
+                  href={item?.link}
+                  key={item?.id}
+                  className={`${
+                    color ? "text-brand" : "text-white"
+                  } transition-colors hover:border-b-4 hover:border-b-green`}
+                >
+                  {item?.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

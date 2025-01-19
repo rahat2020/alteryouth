@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --brand-color: #008a35;
+  --brand-color: #1dc468;
   --brand-link-color: #004e92;
   --border-light: #d8e0ed;
   --border: #b7b7b7;
@@ -26,4 +26,22 @@
   color: #000000d2 !important;
   width: 11px !important;
   height: 15px !important;
+}
+
+#Navbar_animatedUnderline__pGbA3::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: -10%;
+  background: #1dc468;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  border-radius: 50px;
+}
+
+#Navbar_animatedUnderline__pGbA3:hover::before {
+  transform: scaleX(1);
 }
