@@ -1,7 +1,7 @@
 "use client";
-import { FooterData } from "@/helpers/data/FooterData";
 import Link from "next/link";
 import { Facebook, Instagram } from "react-feather";
+import { FooterData } from "@/helpers/data/FooterData";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +29,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            <div className="border-t"></div>
             {/* Copyright and Legal */}
             <div className="space-y-2">
               <p className="text-sm text-dark">
