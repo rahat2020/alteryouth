@@ -112,7 +112,10 @@ const Topbar = () => {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-50`}
       >
-        <button className="px-8 pt-8" onClick={() => setIsSidebarOpen(false)}>
+        <button
+          className="px-8 pt-8 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        >
           <X className="text-green" />
         </button>
         <nav className="mt-16 flex flex-col gap-2 px-6 w-full">
